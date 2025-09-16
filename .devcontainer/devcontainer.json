@@ -3,16 +3,14 @@
   "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
   "features": {
     "ghcr.io/devcontainers/features/aws-cli:1": {},
-    "ghcr.io/devcontainers/features/terraform:1": {
-      "version": "1.7.5"
-    }
+    "ghcr.io/devcontainers/features/terraform:1": { "version": "1.7.5" },
+    "ghcr.io/devcontainers/features/kubectl:1": { "version": "1.30" }
   },
-  "postCreateCommand": "sudo apt-get update && sudo apt-get install -y jq make curl apt-transport-https ca-certificates gnupg && curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.30/deb/Release.key | sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/kubernetes-apt-keyring.gpg && echo 'deb https://pkgs.k8s.io/core:/stable:/v1.30/deb/ /' | sudo tee /etc/apt/sources.list.d/kubernetes.list && sudo apt-get update && sudo apt-get install -y kubectl && kubectl version --client --output=yaml || true && NAME=$(git config user.username || true); if [ -z \"$NAME\" ]; then NAME=anon-$(openssl rand -hex 2); fi; NAME=$(echo \"$NAME\" | tr '[:upper:]' '[:lower:]' | tr -cs 'a-z0-9' '-'); echo 'export AWS_REGION=ap-northeast-1' >> ~/.bashrc && echo \"export TF_VAR_name_prefix=eks-hands-on-${NAME}\" >> ~/.bashrc && echo 'echo Using name_prefix=$TF_VAR_name_prefix' >> ~/.bashrc",
+  "postCreateCommand": "set -e; NAME=$(git config user.username || true); if [ -z \"$NAME\" ]; then NAME=\"anon-$(openssl rand -hex 2)\"; fi; NAME=$(echo \"$NAME\" | tr '[:upper:]' '[:lower:]' | tr -cs 'a-z0-9' '-'); echo \"export AWS_REGION=ap-northeast-1\" >> ~/.bashrc; echo \"export TF_VAR_name_prefix=eks-hands-on-${NAME}\" >> ~/.bashrc; echo \"export AWS_REGION=ap-northeast-1\" >> ~/.zshrc; echo \"export TF_VAR_name_prefix=eks-hands-on-${NAME}\" >> ~/.zshrc; echo \"export AWS_REGION=ap-northeast-1\" | sudo tee /etc/profile.d/eks-hands-on.sh >/dev/null; echo \"export TF_VAR_name_prefix=eks-hands-on-${NAME}\" | sudo tee -a /etc/profile.d/eks-hands-on.sh >/dev/null; sudo chmod 644 /etc/profile.d/eks-hands-on.sh",
   "customizations": {
     "vscode": {
-      "extensions": [
-        "shd101wyy.markdown-preview-enhanced"
-      ]
+      "extensions": ["shd101wyy.markdown-preview-enhanced"],
+      "settings": { "terminal.integrated.defaultProfile.linux": "bash" }
     }
   }
 }
