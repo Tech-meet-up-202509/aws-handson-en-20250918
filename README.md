@@ -12,6 +12,20 @@
 - Tools: **AWS CLI v2**, **Terraform v1.6+**, **kubectl v1.30+**
 - **GitHub Codespaces** / Dev Container (this repo auto-sets region & unique name prefix)
 
+> ![NOTE]
+> *IAM permissions* 
+> In this hands-on, we assign **AdministratorAccess** to simplify setup.  
+> In a production scenario, the minimal required permissions would span:  
+> - **VPC / EC2** (VPC, Subnet, NAT Gateway, Route, IGW)  
+> - **EKS** (Cluster, Nodegroup management)  
+> - **IAM** (Role creation and PassRole for EKS/NodeGroup)  
+> - **ELB / NLB** (LoadBalancer + TargetGroup)  
+> - **Auto Scaling** (for NodeGroups)  
+> - **Security Hub & GuardDuty** (enable, list, get findings)  
+>
+> 👉 See AWS docs for detailed policy actions. 
+
+
 ### 0-1) Configure AWS CLI (access keys)
 Obtain **Access key ID** and **Secret access key** for your IAM user, then:
 
