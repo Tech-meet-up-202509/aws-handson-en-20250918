@@ -12,7 +12,7 @@
 - Tools: **AWS CLI v2**, **Terraform v1.6+**, **kubectl v1.30+**
 - **GitHub Codespaces** / Dev Container (this repo auto-sets region & unique name prefix)
 
-> ![NOTE]
+> [!NOTE]
 > *IAM permissions* 
 > In this hands-on, we assign **AdministratorAccess** to simplify setup.  
 > In a production scenario, the minimal required permissions would span:  
