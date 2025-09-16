@@ -6,6 +6,7 @@
     "ghcr.io/devcontainers/features/terraform:1": { "version": "1.7.5" },
     "ghcr.io/devcontainers/features/kubectl:1": { "version": "1.30" }
   },
+  "remoteUser": "vscode",
   "postCreateCommand": "set -e; NAME=$(git config user.username || true); if [ -z \"$NAME\" ]; then NAME=\"anon-$(openssl rand -hex 2)\"; fi; NAME=$(echo \"$NAME\" | tr '[:upper:]' '[:lower:]' | tr -cs 'a-z0-9' '-'); echo \"export AWS_REGION=ap-northeast-1\" >> ~/.bashrc; echo \"export TF_VAR_name_prefix=eks-hands-on-${NAME}\" >> ~/.bashrc; echo \"export AWS_REGION=ap-northeast-1\" >> ~/.zshrc; echo \"export TF_VAR_name_prefix=eks-hands-on-${NAME}\" >> ~/.zshrc; echo \"export AWS_REGION=ap-northeast-1\" | sudo tee /etc/profile.d/eks-hands-on.sh >/dev/null; echo \"export TF_VAR_name_prefix=eks-hands-on-${NAME}\" | sudo tee -a /etc/profile.d/eks-hands-on.sh >/dev/null; sudo chmod 644 /etc/profile.d/eks-hands-on.sh",
   "customizations": {
     "vscode": {
