@@ -4,6 +4,28 @@
 > This edition uses **IAM user access keys** (no SSO). Nodes run in **Private Subnets** with **NAT Gateway enabled**.
 
 ---
+## Key Concepts
+
+Before we start the hands-on, here are some quick explanations of the main technologies we use:
+
+### Kubernetes
+Kubernetes is an open-source system for **orchestrating containers**.  
+It helps you run, scale, and manage containerized applications automatically.  
+In this workshop, we use **Amazon EKS (Elastic Kubernetes Service)**, which is a managed Kubernetes service on AWS.
+
+### Infrastructure as Code (IaC)
+Infrastructure as Code means **defining and managing infrastructure (servers, networks, etc.) in code** rather than manual configuration.  
+This makes environments reproducible, version-controlled, and easy to share among team members.
+
+### Terraform
+Terraform is one of the most popular IaC tools.  
+It lets you describe cloud resources (like VPCs, subnets, and clusters) in configuration files and then **provision them automatically**.  
+In this workshop, Terraform creates our **VPC, NAT Gateway, and EKS cluster**.
+
+---
+
+👉 These concepts are connected like this:  
+We use **Terraform (IaC)** to build the cloud infrastructure, and on top of that, we use **Kubernetes (via EKS)** to run our application.
 
 ## 0. Prerequisites (5 min)
 
