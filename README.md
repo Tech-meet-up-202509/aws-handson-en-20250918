@@ -1,4 +1,4 @@
-# AWS EKS Hands-on Workshop (50 minutes) — IAM User Edition (NAT + Private Nodes)
+# AWS EKS Hands-on Workshop (50 minutes) 
 
 > Adapted from the original AKS hands-on repository [k8s-meetup-novice/aks-handson-20250708](https://github.com/k8s-meetup-novice/aks-handson-20250708), rewritten for **AWS (EKS/VPC)** and timeboxed to **~50 minutes**.  
 > This edition uses **IAM user access keys** (no SSO). Nodes run in **Private Subnets** with **NAT Gateway enabled**.
