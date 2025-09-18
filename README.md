@@ -51,13 +51,13 @@ Here’s a simple way to understand them:
 
 In cloud computing, security and operations are a **shared responsibility** between the cloud provider (AWS) and the customer (you).  
 The division of responsibility changes depending on the service model.  
-
-| Responsibility Area        | IaaS (Customer vs AWS)              | PaaS (Customer vs AWS)              | SaaS (Customer vs AWS)         |
-|-----------------------------|--------------------------------------|-------------------------------------|--------------------------------|
-| **Applications**            | Customer                            | Customer                            | AWS                            |
-| **Data**                    | Customer                            | Customer                            | Customer (limited)             |
-| **Runtime / Middleware**    | Customer                            | AWS                                 | AWS                            |
-| **Operating System**        | Customer                            | AWS                                 | AWS                            |
+  
+| Responsibility Area         | IaaS (User vs AWS)                  | PaaS (User vs AWS)                  | SaaS (User vs AWS)             |
+|-----------------------------|-------------------------------------|-------------------------------------|--------------------------------|
+| **Applications**            | User                                | User                                | AWS                            |
+| **Data**                    | User                                | User                                | User (limited)                 |
+| **Runtime / Middleware**    | User                                | AWS                                 | AWS                            |
+| **Operating System**        | User                                | AWS                                 | AWS                            |
 | **Virtualization**          | AWS                                 | AWS                                 | AWS                            |
 | **Hardware / Facilities**   | AWS                                 | AWS                                 | AWS                            |
 
