@@ -288,6 +288,13 @@ fi
 ```
 Disables Security Hub if it was enabled during the session.
 
+> [!NOTE]
+> while the cleanup is running, do not close your browser or shut down Codespaces.
+> Wait until the process is completely finished.
+
+> 👉 **Key takeaway:** Instead of memorizing all the commands, you can reuse scripts like `cleanup.sh`.  
+> But it’s important to understand what each command does — deleting Kubernetes objects, tearing down infrastructure, and cleaning up security services.
+
 ---
 
 > [!NOTE]
@@ -298,5 +305,4 @@ Disables Security Hub if it was enabled during the session.
 
 
 
-> 👉 **Key takeaway:** Instead of memorizing all the commands, you can reuse scripts like `cleanup.sh`.  
-> But it’s important to understand what each command does — deleting Kubernetes objects, tearing down infrastructure, and cleaning up security services.
+
