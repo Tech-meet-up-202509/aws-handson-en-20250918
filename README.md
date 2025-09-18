@@ -88,9 +88,23 @@ The division of responsibility changes depending on the service model.
 >
 > 👉 See AWS docs for detailed policy actions. 
 
+## Generating AWS Access Keys
 
-### 0-1) Configure AWS CLI (access keys)
-Obtain **Access key ID** and **Secret access key** for your IAM user, then:
+To use the AWS CLI, each participant needs an **Access Key ID** and a **Secret Access Key**.  
+In this workshop, the instructor will create IAM users in advance and provide each participant with their own access keys.
+
+### How to create access keys (for instructor)
+1. Go to the **AWS Management Console** → **IAM** → **Users**.  
+2. Select the user you want to generate keys for.  
+3. Navigate to the **Security credentials** tab.  
+4. Under **Access keys**, click **Create access key**.  
+5. Choose the use case (e.g., CLI access), then confirm.  
+6. Download the `.csv` file containing the Access Key ID and Secret Access Key.  
+
+⚠️ Important: The Secret Access Key is only shown once. Keep it safe and share it securely with participants.
+
+### How participants configure the key
+Once you receive your key, configure it in the Codespaces terminal:
 
 ```bash
 aws configure
