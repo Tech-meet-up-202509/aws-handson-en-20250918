@@ -22,10 +22,51 @@ Terraform is one of the most popular IaC tools.
 It lets you describe cloud resources (like VPCs, subnets, and clusters) in configuration files and then **provision them automatically**.  
 In this workshop, Terraform creates our **VPC, NAT Gateway, and EKS cluster**.
 
----
-
 👉 These concepts are connected like this:  
 We use **Terraform (IaC)** to build the cloud infrastructure, and on top of that, we use **Kubernetes (via EKS)** to run our application.
+
+--- 
+
+## Cloud Service Models: IaaS / PaaS / SaaS
+
+When using the cloud, there are three common service models.  
+Here’s a simple way to understand them:
+
+- **IaaS (Infrastructure as a Service)**  
+  - Provides virtualized infrastructure such as servers, storage, and networking.  
+  - Example: **Amazon EC2, VPC**  
+  - Users are responsible for installing and managing the OS, middleware, and applications.  
+
+- **PaaS (Platform as a Service)**  
+  - Provides a managed platform where you can deploy applications without worrying about the underlying infrastructure.  
+  - Example: **AWS Elastic Beanstalk, AWS Lambda**  
+  - The provider manages the OS and runtime, while the user focuses on the application code and data.  
+
+- **SaaS (Software as a Service)**  
+  - Ready-to-use applications delivered over the internet.  
+  - Example: **Gmail, Salesforce**  
+  - The provider manages everything; users simply consume the service.  
+
+## Shared Responsibility Model
+
+In cloud computing, security and operations are a **shared responsibility** between the cloud provider (AWS) and the customer (you).  
+The division of responsibility changes depending on the service model.  
+
+| Responsibility Area        | IaaS (Customer vs AWS)              | PaaS (Customer vs AWS)              | SaaS (Customer vs AWS)         |
+|-----------------------------|--------------------------------------|-------------------------------------|--------------------------------|
+| **Applications**            | Customer                            | Customer                            | AWS                            |
+| **Data**                    | Customer                            | Customer                            | Customer (limited)             |
+| **Runtime / Middleware**    | Customer                            | AWS                                 | AWS                            |
+| **Operating System**        | Customer                            | AWS                                 | AWS                            |
+| **Virtualization**          | AWS                                 | AWS                                 | AWS                            |
+| **Hardware / Facilities**   | AWS                                 | AWS                                 | AWS                            |
+
+👉 The rule of thumb:  
+- In **IaaS**, you manage most of the stack (OS, middleware, apps, data).  
+- In **PaaS**, AWS manages the platform, you manage the apps and data.  
+- In **SaaS**, AWS manages almost everything, you mainly use the service and secure your data.  
+
+---
 
 ## 0. Prerequisites (5 min)
 
